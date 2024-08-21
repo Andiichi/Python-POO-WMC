@@ -1,4 +1,0 @@
-'''
-Erros e Exceções
-
-'''
