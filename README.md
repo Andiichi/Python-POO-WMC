@@ -1,4 +1,4 @@
-<h1 align="left">Repositório de Exercícios Resolvidos - Curso Banco de Dados SQL.</h1>
+<h1 align="left">Repositório de Exercícios Resolvidos - Programação Orientada a Objetos (POO).</h1>
 
 Este repositório contém a solução de exercícios relacionados a **Programação Orientada a Objetos (POO)** em Python, feitos no Bootcamp WoMakersCode, focando também em validações e tratamento de exceções. 
 Os exercícios foram desenvolvidos cobrindo conceitos fundamentais de POO e boas práticas de programação.
