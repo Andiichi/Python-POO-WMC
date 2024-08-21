@@ -54,7 +54,7 @@ Cada anunciado foi é composto por exercícios práticos que ajudam a fixar os c
 
 _Nesse exercício temos que incrementar uma validação no seguinte código:_
 
-![Exercício: Erros e Exceções](exercicio03\image.png)
+![Exercício: Erros e Exceções](exercicio03/image.png)
 
 
 ## 🚀 Como Utilizar
