@@ -10,23 +10,18 @@ class ContaCorrente(Cliente):
         return self.__saldo #valor do saldo
 
     def depositar(self):
-        valor = float(input('Digite um valor: ').replace('.', '').replace(',', '.'))
+        valor = float(input('Digite um valor [ex.: 1.590,59]: ').replace('.', '').replace(',', '.'))
         while True:
-            if not isinstance(valor, float):
-                print("precisa ser um float!")
-                continue
             if not valor:
                 print("O sexo não pode ser em branco!")
                 continue
-
-            if valor <= 0:
+            if valor < 0:
                 print("O valor do depósito deve ser positivo!")
                 continue
             else:
                 self.__saldo += valor
-                print(f'Depósito de R$ {valor:.2f} realizado com sucesso! Saldo atual: R$ {self.__saldo:.2f}')
+                print(f'\nDepósito de R$ {valor:.2f} realizado com sucesso! Saldo atual: R$ {self.__saldo:.2f}')
                 break
-        
                         
     
     def sacar(self):

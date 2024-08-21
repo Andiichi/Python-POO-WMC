@@ -7,8 +7,8 @@ def digite_qualquer_tecla():
     return tecla
 
 
-def menu_conta():
-    print(f'Olá, {cliente.nome}! Escolha uma opção de operação na sua conta corrente ')
+def menu_conta(info_nome):
+    print(f'Olá, {info_nome.capitalize()}! Escolha uma opção de operação na sua conta corrente ')
     print('''   
                 1. Realizar um deposito.
                 2. Realizar um saque.
@@ -18,29 +18,36 @@ def menu_conta():
         Para voltar ao "menu inicial" pressione 'ENTER'...
           ''')
     
-    opcao = digite_qualquer_tecla()
-    # print (opcao)
+    opcao = input('Digite uma opção: ')
 
+    match opcao:
 
-    if opcao == b'1':
-        print('~ Insira um valor para depositar: ')
-        # Realizando operações de depósito e saque
-        cliente.depositar()
-        menu_conta()
+        case'1':
+            print('~ Deposito em conta ~ ')
+            # Realizando operações de depósito e saque
+            cliente.depositar()
+            digite_qualquer_tecla()
+            print()
+            menu_conta(info_nome)
 
-    if opcao == b'2':
-        # Testando saque além do saldo disponível
-        cliente.sacar()
+        case'2':
+            print('~ Saque em conta ~ ')
+            # Testando saque além do saldo disponível
+            cliente.sacar()
+            digite_qualquer_tecla()
+            print()
+            menu_conta(info_nome)
 
-    if opcao == b'3':
-        cadastro_cliente()
+        case'3':
+            cadastro_cliente()
 
-    if opcao == b'0':
-        print('\nObrigada por usar nosso banco, volte sempre!')
-        exit()
-
-    #caso seja outra tecla sem ser as case acima, volta pro menu inicial
-    menu_inicial()
+        case'0':
+            print('\nObrigada por usar nosso banco, volte sempre!')
+            exit()
+        
+    if opcao == b'\r':
+        #caso seja outra tecla sem ser as case acima, volta pro menu inicial
+        menu_inicial()
 
 
 def cadastro_cliente():            
@@ -62,8 +69,8 @@ def menu_inicial():
     opcao = int(input('Escolha uma opção: '))
 
     if opcao == 1: 
-        print('Cadastro já no sistema!')
-        menu_conta()  
+        info_nome = input('Informe seu nome: ')
+        menu_conta(info_nome)  
 
     elif opcao == 2: 
         cadastro_cliente()
@@ -76,9 +83,8 @@ def menu_inicial():
 
         menu_conta()
 
-    else: 
-        print('Opção invalida, tente novamente!') 
-        menu_inicial()
+    print('Opção invalida, tente novamente!') 
+    menu_inicial()
 
 
 
